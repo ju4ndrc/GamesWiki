@@ -7,6 +7,6 @@ class Game(BaseModel):
     title:str
     price:float
     img:str
-    raiting:float
+    rating:float
     trailer:str | None
     
