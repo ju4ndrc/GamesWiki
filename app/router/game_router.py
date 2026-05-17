@@ -8,21 +8,21 @@ router = APIRouter(tags=["game_req"])
 
 @router.get('/search')
 async def search_game(searchGame:str):
-    info_game = await get_info_game(searchGame)
+    info_game =  get_info_game(searchGame)
     
     results = []
     
     for game in info_game:
-        price = await get_game(game["name"])
+        price =  get_game(game["name"])
         
-        trailer = await get_video(game["name"])
+        trailer =  get_video(game["name"])
         
         results.append({
             "id":game["id"],
-            "title":game["title"],
+            "title":game["name"],
             "price":price,
-            "img":game["img"],
-            "raiting":game["raiting"],
+            "img":game["image"],
+            "raiting":game["rating"],
             "trailer":trailer,
     
         })
