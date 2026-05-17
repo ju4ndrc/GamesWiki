@@ -5,7 +5,7 @@ from pydantic import BaseModel , Field
 class Game(BaseModel):
     id:int
     title:str
-    price:float
+    price:dict
     img:str
     rating:float
     trailer:str | None
